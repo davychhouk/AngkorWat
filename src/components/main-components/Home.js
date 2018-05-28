@@ -1,6 +1,7 @@
 //@flow
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { SearchBox } from '../sub-components/SearchBox';
 import { Post } from '../sub-components/Post';
 
 const posts = [
@@ -77,6 +78,7 @@ class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <SearchBox />
         <FlatList data={posts} renderItem={this._renderItem} />
       </View>
     );
