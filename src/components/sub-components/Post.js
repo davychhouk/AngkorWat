@@ -7,15 +7,18 @@ import { PostContent } from './PostContent';
 import { PostActions } from './PostActions';
 import { PostComments } from './PostComments';
 
-type Props = {};
+type Props = {
+  content: Object
+};
 const Post = (props: Props) => {
+  const { content } = props;
   return (
     <View>
       <PostProfile />
       <PostContent />
       <PostActions />
       <PostComments />
-      <Text>Post</Text>
+      <Text>{`${content.key} by ${content.username}`}</Text>
     </View>
   );
 };

@@ -1,9 +1,11 @@
 //@flow
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { Post } from '../sub-components/Post';
 
 const posts = [
   {
+    key: '1',
     username: 'Davy Chhouk',
     datetime: '21-05-2018 10:00:00',
     photo: 'angkor-wat-1.jpg',
@@ -13,6 +15,7 @@ const posts = [
     comments: []
   },
   {
+    key: '2',
     username: 'Davy Chhouk',
     datetime: '22-05-2018 10:00:00',
     photo: 'angkor-wat-2.jpg',
@@ -22,6 +25,7 @@ const posts = [
     comments: []
   },
   {
+    key: '3',
     username: 'Davy Chhouk',
     datetime: '23-05-2018 10:00:00',
     photo: 'angkor-wat-scenamatic.jpg',
@@ -31,6 +35,7 @@ const posts = [
     comments: []
   },
   {
+    key: '4',
     username: 'Davy Chhouk',
     datetime: '24-05-2018 10:00:00',
     photo: 'angkor-wat-top-view.jpg',
@@ -40,6 +45,7 @@ const posts = [
     comments: []
   },
   {
+    key: '5',
     username: 'Davy Chhouk',
     datetime: '25-05-2018 10:00:00',
     photo: 'angkor-wat-sunrise-2.jpg',
@@ -49,6 +55,7 @@ const posts = [
     comments: []
   },
   {
+    key: '6',
     username: 'Davy Chhouk',
     datetime: '26-05-2018 10:00:00',
     photo: 'sunrise-angkor-wat-photographer.jpg',
@@ -64,10 +71,13 @@ class Home extends Component<Props> {
   static navigationOptions = (props: Props) => ({
     title: 'ដើមទំព័រ'
   });
+
+  _renderItem = ({ item }) => <Post content={item} />;
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>ដើមទំព័រ</Text>
+        <FlatList data={posts} renderItem={this._renderItem} />
       </View>
     );
   }
