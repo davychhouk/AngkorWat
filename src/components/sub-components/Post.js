@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 import { PostProfile } from './PostProfile';
 import { PostContent } from './PostContent';
@@ -11,16 +11,34 @@ type Props = {
   content: Object
 };
 const Post = (props: Props) => {
-  const { content } = props;
+  const {
+    key,
+    username,
+    datetime,
+    photo,
+    description,
+    likes,
+    comments
+  } = props.content;
   return (
-    <View>
-      <PostProfile />
-      <PostContent />
-      <PostActions />
+    <View style={styles.postContainer}>
+      <PostProfile username={username} datetime={datetime} />
+      <PostContent photo={photo} description={description} />
+      <PostActions likes={likes} comments={comments} />
       <PostComments />
-      <Text>{`${content.key} by ${content.username}`}</Text>
+      <Text>{`${key} by ${username}`}</Text>
     </View>
   );
 };
+
+const { width } = Dimensions.get('window');
+
+const styles = StyleSheet.create({
+  postContainer: {
+    backgroundColor: '#ffffff',
+    marginBottom: 2,
+    width: width
+  }
+});
 
 export { Post };
