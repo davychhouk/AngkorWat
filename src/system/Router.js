@@ -9,30 +9,39 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 type Props = {};
 class Home extends Component<Props> {
+  static navigationOptions = props => ({
+    title: 'ដើមទំព័រ'
+  });
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home</Text>
+        <Text>ដើមទំព័រ</Text>
       </View>
     );
   }
 }
 
 class Question extends Component<Props> {
+  static navigationOptions = props => ({
+    title: 'សំណួរចម្លើយ'
+  });
   render() {
     return (
       <View style={styles.container}>
-        <Text>Question</Text>
+        <Text>សំណួរចម្លើយ</Text>
       </View>
     );
   }
 }
 
 class Profile extends Component<Props> {
+  static navigationOptions = props => ({
+    title: 'ប្រូហ្វាល់'
+  });
   render() {
     return (
       <View style={styles.container}>
-        <Text>Profile</Text>
+        <Text>ប្រូហ្វាល់</Text>
       </View>
     );
   }
@@ -72,7 +81,7 @@ export default createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      activeTintColor: 'tomato',
+      activeTintColor: '#80daff',
       inactiveTintColor: 'gray'
     }
   }
