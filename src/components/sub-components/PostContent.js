@@ -27,7 +27,7 @@ const PostContent = (props: Props) => {
   const { width } = Dimensions.get('window');
   return (
     <View>
-      <View style={{ marginHorizontal: 10, marginBottom: 10 }}>
+      <View style={{ marginHorizontal: 10 }}>
         <ViewMoreText
           numberOfLines={3}
           renderViewMore={renderViewMore}
