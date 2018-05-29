@@ -1,6 +1,7 @@
 //@flow
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type Props = {
   username: string,
@@ -13,17 +14,17 @@ const PostProfile = (props: Props) => {
       <View style={styles.profileContainer}>
         <View borderRadius={50} style={styles.imageStyle}>
           <Image
-            style={{ width: 40, height: 40 }}
+            style={{ width: 50, height: 50 }}
             source={require('../../assets/icons/profile.jpg')}
           />
         </View>
         <View style={{ marginLeft: 10 }}>
-          <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{username}</Text>
-          <Text style={{ fontSize: 12 }}>{datetime}</Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 14 }}>{username}</Text>
+          <Text style={{ fontSize: 10 }}>{datetime}</Text>
         </View>
       </View>
       <View>
-        <Text>⌥</Text>
+        <Icon name={'chevron-down'} size={25} />
       </View>
     </View>
   );

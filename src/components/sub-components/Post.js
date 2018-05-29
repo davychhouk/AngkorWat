@@ -18,15 +18,14 @@ const Post = (props: Props) => {
     photo,
     description,
     likes,
+    liked,
     comments
   } = props.content;
   return (
     <View style={styles.postContainer}>
       <PostProfile username={username} datetime={datetime} />
       <PostContent photo={photo} description={description} />
-      <PostActions likes={likes} comments={comments} />
-      <PostComments />
-      <Text>{`${key} by ${username}`}</Text>
+      <PostActions liked={liked} likes={likes} comments={comments} />
     </View>
   );
 };
