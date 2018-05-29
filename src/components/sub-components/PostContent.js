@@ -1,6 +1,22 @@
 //@flow
 import React from 'react';
 import { View, Text, Image, Dimensions } from 'react-native';
+import ViewMoreText from 'react-native-view-more-text';
+
+const renderViewMore = onPress => {
+  return (
+    <Text onPress={onPress} style={{ color: '#80daff' }}>
+      បន្តអាន
+    </Text>
+  );
+};
+const renderViewLess = onPress => {
+  return (
+    <Text onPress={onPress} style={{ color: '#80daff' }}>
+      លាក់ខ្លះ
+    </Text>
+  );
+};
 
 type Props = {
   photo: string,
@@ -12,7 +28,13 @@ const PostContent = (props: Props) => {
   return (
     <View>
       <View style={{ marginHorizontal: 10, marginBottom: 10 }}>
-        <Text>{description}</Text>
+        <ViewMoreText
+          numberOfLines={3}
+          renderViewMore={renderViewMore}
+          renderViewLess={renderViewLess}
+        >
+          <Text>{description}</Text>
+        </ViewMoreText>
       </View>
       <View>
         <Image

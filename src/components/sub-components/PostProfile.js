@@ -24,7 +24,7 @@ const PostProfile = (props: Props) => {
         </View>
       </View>
       <View>
-        <Icon name={'chevron-down'} size={25} />
+        <Icon name={'dots-horizontal'} size={20} />
       </View>
     </View>
   );
@@ -43,8 +43,9 @@ const styles = StyleSheet.create({
   },
   imageStyle: {
     overflow: 'hidden',
-    borderColor: 'tomato',
-    borderWidth: 1
+    borderColor: '#80daff',
+    borderWidth: 1,
+    marginTop: 5
   }
 });
 
