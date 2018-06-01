@@ -4,6 +4,7 @@ import {
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation';
+import { Text, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Home from '../components/main-components/Home';
@@ -42,9 +43,32 @@ export default createBottomTabNavigator(
           iconName = `ios-contact${focused ? '' : '-outline'}`;
         }
         const icon = () => (
-          <Ionicons name={iconName} size={25} color={tintColor} />
+          <Ionicons name={iconName} size={22} color={tintColor} />
         );
         return icon();
+      },
+      tabBarLabel: ({ focused, tintColor }) => {
+        const { routeName } = navigation.state;
+        const { label } = styles;
+        if (routeName === 'Home') {
+          return (
+            <Text style={focused ? [label, { color: tintColor }] : label}>
+              ដើមទំព័រ
+            </Text>
+          );
+        } else if (routeName === 'Question') {
+          return (
+            <Text style={focused ? [label, { color: tintColor }] : label}>
+              សំណួរចម្លើយ
+            </Text>
+          );
+        } else if (routeName === 'Profile') {
+          return (
+            <Text style={focused ? [label, { color: tintColor }] : label}>
+              ប្រូហ្វាល់
+            </Text>
+          );
+        }
       }
     }),
     tabBarOptions: {
@@ -53,16 +77,9 @@ export default createBottomTabNavigator(
     }
   }
 );
-// // Default Route
-// export default createStackNavigator(
-//   {
-//     Main: Tabs,
-//     Detail: PostDetail
-//   },
-//   {
-//     initialRouteName: 'Main',
-//     navigationOptions: {
-//       header: null
-//     }
-//   }
-// );
+
+const styles = StyleSheet.create({
+  label: {
+    fontSize: 10
+  }
+});
