@@ -3,7 +3,6 @@ import React from 'react';
 import {
   SafeAreaView,
   View,
-  Text,
   StyleSheet,
   Dimensions,
   TextInput
@@ -31,7 +30,8 @@ const styles = StyleSheet.create({
   container: {
     width: width,
     height: height / 10,
-    backgroundColor: '#80daff'
+    backgroundColor: '#80daff',
+    justifyContent: 'flex-end'
   },
   searchBoxContainerStyle: {
     backgroundColor: '#73c4e5',

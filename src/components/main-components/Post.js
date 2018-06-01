@@ -2,9 +2,9 @@
 import React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 
-import { PostProfile } from './PostProfile';
-import { PostContent } from './PostContent';
-import { PostActions } from './PostActions';
+import { PostProfile } from '../sub-components/PostProfile';
+import PostContent from '../sub-components/PostContent';
+import { PostActions } from '../sub-components/PostActions';
 
 type Props = {
   content: Object

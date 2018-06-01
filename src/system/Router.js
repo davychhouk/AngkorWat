@@ -9,9 +9,24 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from '../components/main-components/Home';
 import Question from '../components/main-components/Question';
 import Profile from '../components/main-components/Profile';
+import PostDetail from '../components/main-components/PostDetail';
+
+// //Post Navigator
+// const postNavStack = createStackNavigator(
+//   {
+//     Home: Home,
+//
+//   },
+//   {
+//     initialRouteName: 'Home',
+//     navigationOptions: {
+//       header: null
+//     }
+//   }
+// );
 
 //Export Router
-export default createBottomTabNavigator(
+const Tabs = createBottomTabNavigator(
   {
     Home: Home,
     Question: Question,
@@ -38,6 +53,19 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: '#80daff',
       inactiveTintColor: 'gray'
+    }
+  }
+);
+// Default Route
+export default createStackNavigator(
+  {
+    Main: Tabs,
+    Detail: PostDetail
+  },
+  {
+    initialRouteName: 'Main',
+    navigationOptions: {
+      header: null
     }
   }
 );
