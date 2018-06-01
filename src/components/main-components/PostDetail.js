@@ -12,7 +12,16 @@ type Props = {
   navigation: Object
 };
 class PostDetail extends Component<Props> {
-  static navigationOptions = (props: Props) => ({});
+  static navigationOptions = (props: Props) => ({
+    headerStyle: {
+      backgroundColor: '#80daff'
+    },
+    headerBackTitleStyle: {
+      marginTop: 5,
+      color: '#fff'
+    },
+    headerTintColor: '#fff'
+  });
 
   render() {
     const content = this.props.navigation.getParam('content', {});
