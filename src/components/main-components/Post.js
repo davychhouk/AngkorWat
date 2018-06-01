@@ -10,19 +10,11 @@ type Props = {
   content: Object
 };
 const Post = (props: Props) => {
-  const {
-    username,
-    datetime,
-    photo,
-    description,
-    likes,
-    liked,
-    comments
-  } = props.content;
+  const { username, datetime, likes, liked, comments } = props.content;
   return (
     <View style={styles.postContainer}>
       <PostProfile username={username} datetime={datetime} />
-      <PostContent photo={photo} description={description} />
+      <PostContent content={props.content} />
       <PostActions liked={liked} likes={likes} comments={comments} />
     </View>
   );

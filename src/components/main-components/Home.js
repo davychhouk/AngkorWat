@@ -82,7 +82,8 @@ const posts = [
 type Props = {};
 class Home extends Component<Props> {
   static navigationOptions = (props: Props) => ({
-    title: 'ដើមទំព័រ'
+    title: 'ដើមទំព័រ',
+    header: null
   });
 
   _renderItem = ({ item }) => <Post content={item} />;

@@ -11,24 +11,21 @@ import Question from '../components/main-components/Question';
 import Profile from '../components/main-components/Profile';
 import PostDetail from '../components/main-components/PostDetail';
 
-// //Post Navigator
-// const postNavStack = createStackNavigator(
-//   {
-//     Home: Home,
-//
-//   },
-//   {
-//     initialRouteName: 'Home',
-//     navigationOptions: {
-//       header: null
-//     }
-//   }
-// );
-
-//Export Router
-const Tabs = createBottomTabNavigator(
+//Post Navigator
+const postNavStack = createStackNavigator(
   {
     Home: Home,
+    Detail: PostDetail
+  },
+  {
+    initialRouteName: 'Home'
+  }
+);
+
+//Export Router
+export default createBottomTabNavigator(
+  {
+    Home: postNavStack,
     Question: Question,
     Profile: Profile
   },
@@ -56,16 +53,16 @@ const Tabs = createBottomTabNavigator(
     }
   }
 );
-// Default Route
-export default createStackNavigator(
-  {
-    Main: Tabs,
-    Detail: PostDetail
-  },
-  {
-    initialRouteName: 'Main',
-    navigationOptions: {
-      header: null
-    }
-  }
-);
+// // Default Route
+// export default createStackNavigator(
+//   {
+//     Main: Tabs,
+//     Detail: PostDetail
+//   },
+//   {
+//     initialRouteName: 'Main',
+//     navigationOptions: {
+//       header: null
+//     }
+//   }
+// );

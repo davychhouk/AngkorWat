@@ -5,8 +5,8 @@ import ViewMoreText from 'react-native-view-more-text';
 import { withNavigation } from 'react-navigation';
 
 type Props = {
-  photo: string,
-  description: string,
+  isDetail?: boolean,
+  content: Object,
   navigation: Object
 };
 class PostContent extends Component<Props> {
@@ -14,7 +14,9 @@ class PostContent extends Component<Props> {
     return (
       <Text
         onPress={() => {
-          this.props.navigation.navigate('Detail');
+          this.props.navigation.navigate('Detail', {
+            content: this.props.content
+          });
         }}
         style={{ color: '#80daff' }}
       >
@@ -29,20 +31,27 @@ class PostContent extends Component<Props> {
       </Text>
     );
   }
+  _rendContentText(isDetail, description) {
+    return isDetail ? (
+      <Text>{description}</Text>
+    ) : (
+      <ViewMoreText
+        numberOfLines={4}
+        renderViewMore={this._renderViewMore.bind(this)}
+        renderViewLess={this._renderViewLess.bind(this)}
+      >
+        <Text>{description}</Text>
+      </ViewMoreText>
+    );
+  }
 
   render() {
-    const { photo, description } = this.props;
+    const { photo, description } = this.props.content;
     const { width } = Dimensions.get('window');
     return (
       <View>
         <View style={{ marginHorizontal: 10 }}>
-          <ViewMoreText
-            numberOfLines={4}
-            renderViewMore={this._renderViewMore.bind(this)}
-            renderViewLess={this._renderViewLess.bind(this)}
-          >
-            <Text>{description}</Text>
-          </ViewMoreText>
+          {this._rendContentText(this.props.isDetail, description)}
         </View>
         <View style={{ marginTop: 5 }}>
           <Image
