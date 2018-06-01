@@ -33,7 +33,9 @@ class PostContent extends Component<Props> {
   }
   _rendContentText(isDetail, description) {
     return isDetail ? (
-      <Text>{description}</Text>
+      <View>
+        <Text>{description}</Text>
+      </View>
     ) : (
       <ViewMoreText
         numberOfLines={4}

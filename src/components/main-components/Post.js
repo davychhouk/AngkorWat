@@ -1,22 +1,31 @@
 //@flow
 import React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 import { PostProfile } from '../sub-components/PostProfile';
 import PostContent from '../sub-components/PostContent';
 import { PostActions } from '../sub-components/PostActions';
 
 type Props = {
-  content: Object
+  content: Object,
+  navigation: Object
 };
 const Post = (props: Props) => {
   const { username, datetime, likes, liked, comments } = props.content;
   return (
-    <View style={styles.postContainer}>
+    <TouchableOpacity
+      onPress={() => {
+        props.navigation.navigate('Detail', {
+          content: props.content
+        });
+      }}
+      style={styles.postContainer}
+    >
       <PostProfile username={username} datetime={datetime} />
       <PostContent content={props.content} />
       <PostActions liked={liked} likes={likes} comments={comments} />
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -30,4 +39,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { Post };
+export default withNavigation(Post);

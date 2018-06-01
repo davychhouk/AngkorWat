@@ -1,6 +1,6 @@
 //@flow
 import React, { Component } from 'react';
-import { SafeAreaView, StyleSheet, Dimensions, Button } from 'react-native';
+import { SafeAreaView, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
 import { PostProfile } from '../sub-components/PostProfile';
@@ -18,11 +18,13 @@ class PostDetail extends Component<Props> {
     const content = this.props.navigation.getParam('content', {});
     const { username, datetime, likes, liked, comments } = content;
     return (
-      <SafeAreaView style={styles.container}>
-        <PostProfile username={username} datetime={datetime} />
-        <PostContent content={content} isDetail={true} />
-        <PostActions liked={liked} likes={likes} comments={comments} />
-      </SafeAreaView>
+      <ScrollView>
+        <SafeAreaView style={styles.container}>
+          <PostProfile username={username} datetime={datetime} />
+          <PostContent content={content} isDetail={true} />
+          <PostActions liked={liked} likes={likes} comments={comments} />
+        </SafeAreaView>
+      </ScrollView>
     );
   }
 }
