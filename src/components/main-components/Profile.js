@@ -8,6 +8,7 @@ class Profile extends Component<Props> {
   static navigationOptions = (props: Props) => ({
     title: 'ប្រូហ្វាល់'
   });
+
   render() {
     return (
       <View style={styles.container}>

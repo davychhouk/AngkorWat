@@ -7,7 +7,7 @@ import {
 import { Text, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import Home from '../components/main-components/Home';
+import Home from '../components/scenes/Home';
 import Question from '../components/main-components/Question';
 import Profile from '../components/main-components/Profile';
 import PostDetail from '../components/main-components/PostDetail';

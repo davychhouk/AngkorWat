@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { SearchBox } from '../sub-components/SearchBox';
-import Post from './Post';
+import Post from '../main-components/Post';
 
 const posts = [
   {
