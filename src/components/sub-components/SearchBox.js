@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     width: width,
     height: height / 10,
     backgroundColor: '#80daff',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    marginTop: 10
   },
   searchBoxContainerStyle: {
     backgroundColor: '#73c4e5',
