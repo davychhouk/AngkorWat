@@ -10,17 +10,17 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.3.1",
-    "react-native": "^0.58.5",
-    "react-native-vector-icons": "^4.6.0",
+    "react": "^16.14.0",
+    "react-native": "^0.21.0",
+    "react-native-vector-icons": "^8.0.0",
     "react-native-view-more-text": "^1.4.4",
-    "react-navigation": "^2.0.1",
+    "react-navigation": "^4.4.3",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "babel-jest": "22.4.4",
+    "babel-jest": "^26.6.3",
     "babel-preset-react-native": "4.0.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
@@ -30,9 +30,9 @@
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-standard": "^3.1.0",
     "flow-bin": "^0.67.1",
-    "jest": "22.4.4",
+    "jest": "^26.6.3",
     "prettier": "^1.12.1",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "^16.14.0"
   },
   "jest": {
     "preset": "react-native"
